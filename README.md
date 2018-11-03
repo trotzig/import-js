@@ -95,13 +95,22 @@ the cursor on a variable and hit `<leader>g` (Vim), `(M-x) import-js-goto`
 
 ## Things to note
 
-- Only files ending in `.js\*` and `.ts*` are considered when importing
+- Only files ending in `.js\*`, `.ts*` and `.coffee` are considered when importing
 - As part of resolving imports, all imports will be sorted and placed into
   groups. *Grouping and sorting can be disabled, see the `groupImports` and `sortImports` configuration
   options. Comments and whitespace will be preserved if these are both disabled.*
 - You can speed up ImportJS by installing
   [Watchman](https://facebook.github.io/watchman/). See [Speeding it
   up!](#speeding-it-up) for more information.
+- For CoffeeScript you need to configure an `importStatementFormatter` to remove the trailing semicolons:
+    - ```javascript
+      // .importjs.js
+      module.exports = {
+        importStatementFormatter({ importStatement }) {
+          return importStatement.replace(/;$/, '');
+        },
+      }
+      ```
 
 ## Configuration
 
@@ -373,7 +382,7 @@ importFunction: 'myCustomRequireFunction'
 
 An array that controls what file extensions are stripped out from the resulting
 import statement. The default configuration strips out `[".js", ".jsx", ".ts",
-".tsx"]`. Set to an empty array `[]` to avoid stripping out extensions.
+".tsx", ".coffee"]`. Set to an empty array `[]` to avoid stripping out extensions.
 
 ```javascript
 stripFileExtensions: ['.web.js', '.js']
