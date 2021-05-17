@@ -141,6 +141,7 @@ The following configuration options are supported.
 - [`moduleNameFormatter`](#modulenameformatter)
 - [`namedExports`](#namedexports)
 - [`sortImports`](#sortimports)
+- [`appendImports`](#appendimports)
 - [`stripFileExtensions`](#stripfileextensions)
 - [`danglingCommas`](#danglingcommas)
 - [`tab`](#tab)
@@ -324,6 +325,9 @@ disabled, existing imports are not rearranged, and new imports are always added 
 ```javascript
 sortImports: false
 ```
+
+### `appendImports`
+When appendImports is true and sortImports and groupImports is false, you will have imports appear at the bottom of the import statements rather than the top.
 
 ### `emptyLineBetweenGroups`
 
