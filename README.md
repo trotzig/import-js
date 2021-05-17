@@ -102,6 +102,7 @@ the cursor on a variable and hit `<leader>g` (Vim), `(M-x) import-js-goto`
 - You can speed up ImportJS by installing
   [Watchman](https://facebook.github.io/watchman/). See [Speeding it
   up!](#speeding-it-up) for more information.
+- `customElements.define(...)` statements are automatically imported to files using the ``` html`<custom-element>` ``` template literal syntax.
 
 ## Configuration
 
