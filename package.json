@@ -79,7 +79,7 @@
     "minimatch": "^3.0.4",
     "require-relative": "^0.8.7",
     "semver": "^6.3.0",
-    "sqlite3": "^4.1.1",
+    "sqlite3": "^5.0.2",
     "winston": "^3.2.1"
   },
   "jest": {
